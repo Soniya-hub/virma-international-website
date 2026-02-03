@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --background-secondary: 220 14% 96%;
+    --foreground: 240 20% 12%;
+    --foreground-secondary: 220 9% 46%;
+    --accent: 43 45% 58%;
+    --accent-secondary: 30 25% 44%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 12%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 43 45% 58%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-[#1A1A2E] antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a962;
+  border-radius: 3px;
+}
+
+/* Gold accent button */
+.btn-gold {
+  @apply bg-[#C9A962] text-white px-8 py-3.5 rounded-full font-medium transition-all duration-300;
+}
+.btn-gold:hover {
+  @apply bg-[#B8984F] shadow-lg shadow-[#C9A962]/25 -translate-y-0.5;
+}
+
+/* Outline button */
+.btn-outline {
+  @apply border-2 border-[#1A1A2E] text-[#1A1A2E] px-8 py-3.5 rounded-full font-medium transition-all duration-300;
+}
+.btn-outline:hover {
+  @apply bg-[#1A1A2E] text-white -translate-y-0.5;
+}
+
+/* Card styles */
+.card-elegant {
+  @apply bg-white rounded-2xl overflow-hidden transition-all duration-300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.card-elegant:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Section container */
+.section-container {
+  @apply w-full px-4 sm:px-6 lg:px-12 xl:px-20;
+}
+
+/* Gold text gradient */
+.text-gold {
+  color: #C9A962;
+}
+
+/* Animation utilities */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #C9A962;
+  box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.15);
+}
+
+/* Image hover zoom */
+.img-zoom {
+  @apply overflow-hidden;
+}
+.img-zoom img {
+  @apply transition-transform duration-500;
+}
+.img-zoom:hover img {
+  @apply scale-110;
+}
+
+/* Navigation blur */
+.nav-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Decorative line */
+.gold-line {
+  @apply w-16 h-0.5 bg-[#C9A962];
+}
+
+/* Stat card */
+.stat-card {
+  @apply bg-white rounded-xl p-6 text-center transition-all duration-300;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.stat-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Category card */
+.category-card {
+  @apply relative overflow-hidden rounded-2xl bg-white p-8 transition-all duration-300 cursor-pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.category-card:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+.category-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-[#C9A962]/5 to-transparent opacity-0 transition-opacity duration-300;
+}
+.category-card:hover::before {
+  @apply opacity-100;
+}
