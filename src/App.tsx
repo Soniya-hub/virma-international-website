@@ -54,7 +54,7 @@ function Chatbot() {
         setCurrentFlow('form');
         break;
       case 'contact':
-        addMessage('bot', 'You can contact Virma International directly:\n\n📧 Email: hello@virmahardware.com\n📞 Phone: +91-XXXXXXXXXX\n⏱️ We respond within 24 hours on business days.\n\nOr fill out the Contact Us form on our website!');
+        addMessage('bot', 'You can contact Virma International directly:\n\n📧 Email: info@virmainternational.in\n📞 Phone: +91-6396620603, +91-8869852826\n⏱️ We respond within 24 hours on business days.\n\nOr fill out the Contact Us form on our website!');
         break;
     }
   };
@@ -89,11 +89,11 @@ function Chatbot() {
         } else if (lowerInput.includes('since') || lowerInput.includes('established') || lowerInput.includes('year')) {
           addMessage('bot', 'Virma International has been serving the hardware industry since 2007 - over 18 years of excellence!');
         } else if (lowerInput.includes('catalog') || lowerInput.includes('catalogue')) {
-          addMessage('bot', 'Yes, we provide product catalogs! Please select "View Products" or contact us at hello@virmahardware.com to request one.');
+          addMessage('bot', 'Yes, we provide product catalogs! Please select "View Products" or contact us at info@virmainternational.in to request one.');
         } else if (lowerInput.includes('india') || lowerInput.includes('supply') || lowerInput.includes('deliver')) {
           addMessage('bot', 'Yes, we distribute our products across India through our network of 20+ wholesalers and 40+ retailers.');
         } else {
-          addMessage('bot', 'Thank you for reaching out.\n\nFor detailed or specific queries, please contact us at:\n📧 hello@virmahardware.com\n\nOur team will assist you within 24 hours.');
+          addMessage('bot', 'Thank you for reaching out.\n\nFor detailed or specific queries, please contact us at:\n📧 info@virmainternational.in\n\nOur team will assist you within 24 hours.');
         }
       }
     } else if (currentFlow === 'form') {
@@ -828,7 +828,7 @@ function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#1A1A2E] mb-1">Email</h4>
-                  <p className="text-gray-600 text-sm">hello@virmahardware.com</p>
+                  <p className="text-gray-600 text-sm">info@virmainternational.in</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -837,7 +837,7 @@ function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#1A1A2E] mb-1">Phone</h4>
-                  <p className="text-gray-600 text-sm">+91-XXXXXXXXXX</p>
+                  <p className="text-gray-600 text-sm">+91-6396620603, +91-8869852826</p>
                 </div>
               </div>
             </div>
