@@ -9,6 +9,9 @@ import {
 } from 'lucide-react';
 import './App.css';
 import emailjs from '@emailjs/browser';
+import { Routes, Route } from 'react-router-dom';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -937,11 +940,11 @@ function Footer() {
         </div>
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-sm text-gray-400">
-            © 2024 Virma International. All rights reserved.
+            © 2026 Virma International. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -957,22 +960,33 @@ function App() {
     };
   }, []);
 
-  return (
-    <div className="relative">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ProductsSection />
-        <CategoriesSection />
-        <WhyChooseSection />
-        <NetworkSection />
-        <ContactSection />
-        <Footer />
-      </main>
-      <Chatbot />
-    </div>
-  );
+return (
+  <div className="relative">
+    <Navigation />
+
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <HeroSection />
+            <AboutSection />
+            <ProductsSection />
+            <CategoriesSection />
+            <WhyChooseSection />
+            <NetworkSection />
+            <ContactSection />
+            <Footer />
+            <Chatbot />
+          </>
+        }
+      />
+
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<Terms />} />
+    </Routes>
+  </div>
+);
 }
 
 export default App;
