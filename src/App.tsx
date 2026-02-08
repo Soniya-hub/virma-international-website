@@ -485,9 +485,13 @@ function ProductsSection() {
                   <span className="text-xs text-[#C9A962] font-medium bg-[#C9A962]/10 px-3 py-1 rounded-full">
                     {product.sizes}
                   </span>
-                  <button onClick={scrollToContact} className="text-sm font-medium text-[#1A1A2E] flex items-center gap-1 group-hover:text-[#C9A962] transition-colors">
-                    <Download size={14} /> Request Catalogue
-                  </button>
+                 <a
+  href="/virma-catalogue.pdf"
+  download
+  className="text-sm font-medium text-[#1A1A2E] flex items-center gap-1 group-hover:text-[var(--brand-yellow)] transition-colors"
+>
+  <Download size={14} /> Download Catalogue
+</a>
                 </div>
               </div>
             </div>
