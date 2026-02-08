@@ -208,10 +208,10 @@ function Navigation() {
             Virma International
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollTo('about')} className="text-sm text-gray-600 hover:text-[#1A1A2E] transition-colors">About</button>
-            <button onClick={() => scrollTo('products')} className="text-sm text-gray-600 hover:text-[#1A1A2E] transition-colors">Products</button>
-            <button onClick={() => scrollTo('categories')} className="text-sm text-gray-600 hover:text-[#1A1A2E] transition-colors">Categories</button>
-            <button onClick={() => scrollTo('network')} className="text-sm text-gray-600 hover:text-[#1A1A2E] transition-colors">Network</button>
+            <button onClick={() => scrollTo('about')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">About</button>
+            <button onClick={() => scrollTo('products')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">Products</button>
+            <button onClick={() => scrollTo('categories')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">Categories</button>
+            <button onClick={() => scrollTo('network')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">Network</button>
             <button onClick={() => scrollTo('contact')} className="btn-gold text-sm py-2.5">Contact Us</button>
           </div>
           <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
