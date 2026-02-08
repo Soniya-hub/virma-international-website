@@ -1,29 +1,28 @@
 export default function Terms() {
   return (
-    <div className="section-container py-24 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
+    <div className="min-h-screen bg-gray-50 pt-28 px-4 pb-20">
+      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6 sm:p-10">
 
-      <p className="mb-4">
-        By accessing this website, you agree to comply with these terms.
-      </p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1A1A2E] mb-6 text-center">
+          Terms of Service
+        </h1>
 
-      <p className="mb-4">
-        All content on this site including text, images, and branding belongs to
-        Virma International and may not be reused without permission.
-      </p>
+        <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed">
+          By accessing this website, you agree to comply with the following terms and conditions.
+        </p>
 
-      <p className="mb-4">
-        Product pricing and availability are subject to change without notice.
-      </p>
+        <ul className="space-y-3 text-gray-600 text-sm sm:text-base list-disc pl-5 leading-relaxed">
+          <li>All content including images and branding belongs to Virma International.</li>
+          <li>No material may be reused without written permission.</li>
+          <li>Product pricing and availability may change without notice.</li>
+          <li>We are not responsible for indirect damages from website usage.</li>
+        </ul>
 
-      <p className="mb-4">
-        Virma International is not liable for any indirect damages arising from
-        website usage.
-      </p>
+        <p className="mt-8 text-xs sm:text-sm text-gray-400 text-center">
+          Last updated: 2026
+        </p>
 
-      <p className="mt-8 text-sm text-gray-500">
-        Last updated: 2026
-      </p>
+      </div>
     </div>
   );
 }

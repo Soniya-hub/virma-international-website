@@ -1,30 +1,27 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="section-container py-24 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+    <div className="min-h-screen bg-gray-50 pt-28 px-4 pb-20">
+      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6 sm:p-10">
 
-      <p className="mb-4">
-        Virma International respects your privacy. Any information collected through
-        this website including name, email, phone number, or business details is used
-        only to respond to inquiries and provide services.
-      </p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#1A1A2E] mb-6 text-center">
+          Privacy Policy
+        </h1>
 
-      <p className="mb-4">
-        We do not sell, share, or distribute your personal data to third parties.
-      </p>
+        <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed">
+          We respect your privacy. Any information submitted through our website is used only to respond to inquiries and provide services.
+        </p>
 
-      <p className="mb-4">
-        Information submitted via contact forms or chatbot is securely processed using
-        EmailJS and used solely for communication purposes.
-      </p>
+        <ul className="space-y-3 text-gray-600 text-sm sm:text-base list-disc pl-5 leading-relaxed">
+          <li>We do not sell or share your data.</li>
+          <li>Contact details are used only for communication.</li>
+          <li>No cookies are used for tracking.</li>
+        </ul>
 
-      <p className="mb-4">
-        By using this website, you consent to this Privacy Policy.
-      </p>
+        <p className="mt-8 text-xs sm:text-sm text-gray-400 text-center">
+          Last updated: 2026
+        </p>
 
-      <p className="mt-8 text-sm text-gray-500">
-        Last updated: 2026
-      </p>
+      </div>
     </div>
   );
 }
