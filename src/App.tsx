@@ -126,14 +126,16 @@ function Chatbot() {
   return (
     
     <div className="fixed bottom-6 right-6 z-50">
-      <a
+   <a
   href="https://wa.me/916396620603?text=Hello%20Virma%20International,%20I%20am%20interested%20in%20your%20products."
   target="_blank"
   rel="noopener noreferrer"
-  className="fixed bottom-24 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-xl flex items-center gap-2"
+  className="fixed bottom-24 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-3 shadow-xl flex items-center gap-2 animate-bounce"
 >
   <MessageCircle size={20} />
-  <span className="hidden md:block text-sm font-medium">WhatsApp</span>
+
+  {/* show text on ALL devices */}
+  <span className="text-sm font-medium">WhatsApp</span>
 </a>
       {!isOpen ? (
         <button onClick={() => setIsOpen(true)} className="btn-gold flex items-center gap-2 shadow-xl">
