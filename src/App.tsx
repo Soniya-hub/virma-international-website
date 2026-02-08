@@ -484,7 +484,7 @@ function ProductsSection() {
                     {product.sizes}
                   </span>
                  <a
-  href="/virma-catalogue.pdf"
+  href="/virma_catalogue.pdf"
   download
   className="text-sm font-medium text-[#1A1A2E] flex items-center gap-1 group-hover:text-[var(--brand-yellow)] transition-colors"
 >
