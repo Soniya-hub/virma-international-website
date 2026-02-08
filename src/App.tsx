@@ -8,6 +8,7 @@ import {
   Download, MessageSquare, DollarSign, Handshake, Boxes
 } from 'lucide-react';
 import './App.css';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -736,6 +737,7 @@ function NetworkSection() {
 // Contact Section
 function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -760,10 +762,27 @@ function ContactSection() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-  };
+ const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formRef.current) return;
+
+  emailjs
+    .sendForm(
+      'service_2niuvxh',
+      'template_qf5o3gi',
+      formRef.current,
+      'LH9Z4ZZZyY2ORtqHb'
+    )
+    .then(() => {
+      alert('Inquiry sent successfully!');
+      formRef.current?.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      alert('Failed to send inquiry.');
+    });
+};
 
   return (
     <section ref={sectionRef} id="contact" className="py-24 bg-gray-50">
@@ -808,31 +827,31 @@ function ContactSection() {
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="animate-in bg-white rounded-2xl p-8 shadow-lg">
+          <form ref={formRef} onSubmit={handleSubmit} className="animate-in bg-white rounded-2xl p-8 shadow-lg">
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-                <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
+                <input name="name" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Business</label>
-                <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
+                <input name="business" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
+                <input name="email" type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                <input type="tel" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
+                <input name="phone" type="tel" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Product Interest</label>
-                <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm">
+                <select name="product" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm">
                   <option>Select a product</option>
                   <option>Aldrops</option>
                   <option>Door Kits</option>
@@ -844,12 +863,12 @@ function ContactSection() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
-                <input type="text" placeholder="e.g., 100 sets" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
+                <input name="quantity" type="text" placeholder="e.g., 100 sets" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm" />
               </div>
             </div>
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-              <textarea rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none"></textarea>
+              <textarea name="message" rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm resize-none"></textarea>
             </div>
             <button type="submit" className="btn-gold w-full">Send Inquiry</button>
           </form>
