@@ -229,7 +229,7 @@ const scrollTo = (id: string) => {
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
           <div className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
-            Virma International
+            VIRMA INTERNATIONAL
           </div>
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollTo('about')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">About</button>
