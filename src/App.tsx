@@ -12,6 +12,7 @@ import emailjs from '@emailjs/browser';
 import { Routes, Route } from 'react-router-dom';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -204,6 +205,7 @@ function Chatbot() {
 function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -211,11 +213,14 @@ function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
+const scrollTo = (id: string) => {
+  navigate('/');
+
+  setTimeout(() => {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
-  };
+  }, 300);
+};
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
