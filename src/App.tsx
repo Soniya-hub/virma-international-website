@@ -22,6 +22,7 @@ function Chatbot() {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -96,10 +97,24 @@ function Chatbot() {
         }
       }
     } else if (currentFlow === 'form') {
-      // Simple form completion simulation
-      addMessage('bot', 'Thank you for your details! Our team will contact you within 24 hours.\n\nIs there anything else I can help you with?');
-      setCurrentFlow('menu');
-    }
+
+  emailjs.send(
+    'service_2niuvxh',
+    'template_qf5o3gi',
+    {
+      name: 'Chatbot User',
+      email: 'Not provided',
+      phone: 'Not provided',
+      product: 'Chatbot Inquiry',
+      quantity: '',
+      message: input
+    },
+    'LH9Z4ZZZyY2ORtqHb'
+  );
+
+  addMessage('bot', 'Thank you for your details! Our team will contact you within 24 hours.');
+  setCurrentFlow('menu');
+}
     
     setInput('');
   };
