@@ -204,7 +204,7 @@ function Navigation() {
     }`}>
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
-          <div className="text-2xl font-bold tracking-tight text-[#1A1A2E]" style={{ fontFamily: 'Playfair Display' }}>
+          <div className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
             Virma International
           </div>
           <div className="hidden md:flex items-center gap-8">
