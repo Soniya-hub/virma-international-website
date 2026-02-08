@@ -16,6 +16,23 @@ html {
   transform: translateY(0) scale(0.98);
 }
 
+:root {
+  --brand-yellow: #F2C94C; /* premium gold yellow */
+}
+
+.btn-gold {
+  background: var(--brand-yellow);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  filter: brightness(0.9);
+}
+
 .btn-outline:active {
   transform: translateY(0) scale(0.98);
 }

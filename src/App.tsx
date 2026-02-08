@@ -221,10 +221,10 @@ function Navigation() {
       </div>
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
-          <button onClick={() => scrollTo('about')} className="block w-full text-left text-gray-600">About</button>
-          <button onClick={() => scrollTo('products')} className="block w-full text-left text-gray-600">Products</button>
-          <button onClick={() => scrollTo('categories')} className="block w-full text-left text-gray-600">Categories</button>
-          <button onClick={() => scrollTo('network')} className="block w-full text-left text-gray-600">Network</button>
+          <button onClick={() => scrollTo('about')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">About</button>
+          <button onClick={() => scrollTo('products')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">Products</button>
+          <button onClick={() => scrollTo('categories')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">Categories</button>
+          <button onClick={() => scrollTo('network')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">Network</button>
           <button onClick={() => scrollTo('contact')} className="btn-gold w-full text-center">Contact Us</button>
         </div>
       )}
