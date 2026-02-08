@@ -700,7 +700,12 @@ function NetworkSection() {
                 </span>
               ))}
             </div>
-            <button className="btn-gold">Become a Distributor</button>
+            <button
+  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+  className="btn-gold"
+>
+  Become a Distributor
+</button>
           </div>
           <div className="animate-in relative">
             <div className="aspect-square bg-gradient-to-br from-[#C9A962]/10 to-[#8B7355]/10 rounded-3xl flex items-center justify-center">
