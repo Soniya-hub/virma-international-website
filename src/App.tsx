@@ -228,10 +228,16 @@ const scrollTo = (id: string) => {
     }`}>
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
-          <div className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
+          <div onClick={() => navigate('/')} className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
             VIRMA INTERNATIONAL
           </div>
           <div className="hidden md:flex items-center gap-8">
+            <button
+  onClick={() => navigate('/')}
+  className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors"
+>
+  Home
+</button>
             <button onClick={() => scrollTo('about')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">About</button>
             <button onClick={() => scrollTo('products')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">Products</button>
             <button onClick={() => scrollTo('categories')} className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors">Categories</button>
@@ -245,6 +251,12 @@ const scrollTo = (id: string) => {
       </div>
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
+          <button
+  onClick={() => navigate('/')}
+  className="block w-full text-left text-[var(--brand-yellow)] font-medium"
+>
+  Home
+</button>
           <button onClick={() => scrollTo('about')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">About</button>
           <button onClick={() => scrollTo('products')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">Products</button>
           <button onClick={() => scrollTo('categories')} className="block w-full text-left text-[var(--brand-yellow)] font-medium">Categories</button>
