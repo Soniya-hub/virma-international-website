@@ -915,8 +915,8 @@ function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>D-97 Sector 1, Tala Nagri</li>
               <li>Aligarh-202001, UP, India</li>
-              <li>hello@virmahardware.com</li>
-              <li>+91-XXXXXXXXXX</li>
+              <li>info@virmainternational.in</li>
+              <li>+91-6396620603, +91-8869852826</li>
             </ul>
           </div>
         </div>
