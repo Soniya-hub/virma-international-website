@@ -433,9 +433,7 @@ function ProductsSection() {
     return () => ctx.revert();
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
+ 
 
   const products = [
     {
