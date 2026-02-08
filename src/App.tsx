@@ -228,12 +228,18 @@ const scrollTo = (id: string) => {
     }`}>
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
-          <div onClick={() => navigate('/')} className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
+          <div  onClick={() => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }} className="text-2xl font-bold tracking-tight text-[#C9A962]" style={{ fontFamily: 'Playfair Display' }}>
             VIRMA INTERNATIONAL
           </div>
           <div className="hidden md:flex items-center gap-8">
             <button
-  onClick={() => navigate('/')}
+  onClick={() => {
+  navigate('/');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}}
   className="text-sm text-[var(--brand-yellow)] hover:text-[#1A1A2E] transition-colors"
 >
   Home
@@ -252,7 +258,11 @@ const scrollTo = (id: string) => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
           <button
-  onClick={() => navigate('/')}
+ onClick={() => {
+  navigate('/');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setMobileMenuOpen(false);
+}}
   className="block w-full text-left text-[var(--brand-yellow)] font-medium"
 >
   Home
